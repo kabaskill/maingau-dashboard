@@ -10,7 +10,7 @@ function DropdownNotifications({ align }) {
       title: "1 item(s) on your wishlist is on sale!",
       description: "Don't miss the chance to get your favorite items at a lower price!",
       date: "April 15",
-      url: "wishlist",
+      url: "shop",
     },
     {
       id: 2,

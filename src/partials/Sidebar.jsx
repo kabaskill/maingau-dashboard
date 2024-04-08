@@ -182,9 +182,9 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
             <li className="px-2 py-2 mb-0.5 last:mb-0">
               <NavLink
                 end
-                to="/tariffs"
+                to="/region-check"
                 className={`block  truncate transition duration-150 rounded-full ${
-                  pathname === "/tariffs"
+                  pathname === "/region-check"
                     ? "bg-[var(--color-yellow)] text-[var(--color-text-blue)] text-bold"
                     : "hover:text-red-500"
                 }`}
@@ -293,9 +293,9 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
             <li className="px-2 py-2 mb-0.5 last:mb-0">
               <NavLink
                 end
-                to="/tariffs"
+                to="/settings"
                 className={`block  truncate transition duration-150 rounded-full ${
-                  pathname === "/tariffs"
+                  pathname === "/settings"
                     ? "bg-[var(--color-yellow)] text-[var(--color-text-blue)] text-bold"
                     : "hover:text-red-500"
                 }`}
