@@ -1,10 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=fallback');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=fallback");
 
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
 
 /* Additional styles */
-@import 'additional-styles/utility-patterns.css';
-@import 'additional-styles/flatpickr.css';
+@import "additional-styles/utility-patterns.css";
+@import "additional-styles/flatpickr.css";
 
-@import 'tailwindcss/utilities';
+@import "tailwindcss/utilities";
+
+/* Variables */
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-text-blue: #002d67;
+  --color-dark-blue: #004bad;
+  --color-light-blue: #80b5fb;
+  --color-btn-blue: #036ef8;
+  --color-bg-blue: #f1f6ff;
+  --color-yellow: #ffe500;
+}
