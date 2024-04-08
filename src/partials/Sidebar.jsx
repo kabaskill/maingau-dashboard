@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 
-import SidebarLinkGroup from "./SidebarLinkGroup";
-
 function Sidebar({ sidebarOpen, setSidebarOpen }) {
   const location = useLocation();
   const { pathname } = location;
@@ -139,82 +137,6 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
               </NavLink>
             </li>
 
-            {/* Shop */}
-            <li className="px-2 py-2  mb-0.5 last:mb-0">
-              <NavLink
-                end
-                to="/shop"
-                className={`block  truncate transition duration-150 rounded-full ${
-                  pathname === "/shop"
-                    ? "bg-[var(--color-yellow)] text-[var(--color-text-blue)] text-bold"
-                    : "hover:text-red-500"
-                }`}
-              >
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center">
-                    <svg className="shrink-0 h-6 w-6" viewBox="0 0 24 24">
-                      <path
-                        className={`fill-current ${
-                          pathname.includes("ecommerce") ? "text-indigo-300" : "text-slate-400"
-                        }`}
-                        d="M13 15l11-7L11.504.136a1 1 0 00-1.019.007L0 7l13 8z"
-                      />
-                      <path
-                        className={`fill-current ${
-                          pathname.includes("ecommerce") ? "text-indigo-600" : "text-slate-700"
-                        }`}
-                        d="M13 15L0 7v9c0 .355.189.685.496.864L13 24v-9z"
-                      />
-                      <path
-                        className={`fill-current ${
-                          pathname.includes("ecommerce") ? "text-indigo-500" : "text-slate-600"
-                        }`}
-                        d="M13 15.047V24l10.573-7.181A.999.999 0 0024 16V8l-11 7.047z"
-                      />
-                    </svg>
-                    <span className="text-md font-bold ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
-                      Shop
-                    </span>
-                  </div>
-                </div>
-              </NavLink>
-            </li>
-
-            {/* Jobs */}
-            <li className="px-2 py-2  mb-0.5 last:mb-0">
-              <NavLink
-                end
-                to="/jobs"
-                className={`block  truncate transition duration-150 rounded-full ${
-                  pathname === "/jobs"
-                    ? "bg-[var(--color-yellow)] text-[var(--color-text-blue)] text-bold"
-                    : "hover:text-red-500"
-                }`}
-              >
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center">
-                    <svg className="shrink-0 h-6 w-6" viewBox="0 0 24 24">
-                      <path
-                        className={`fill-current ${
-                          pathname.includes("community") ? "text-indigo-500" : "text-slate-600"
-                        }`}
-                        d="M18.974 8H22a2 2 0 012 2v6h-2v5a1 1 0 01-1 1h-2a1 1 0 01-1-1v-5h-2v-6a2 2 0 012-2h.974zM20 7a2 2 0 11-.001-3.999A2 2 0 0120 7zM2.974 8H6a2 2 0 012 2v6H6v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5H0v-6a2 2 0 012-2h.974zM4 7a2 2 0 11-.001-3.999A2 2 0 014 7z"
-                      />
-                      <path
-                        className={`fill-current ${
-                          pathname.includes("community") ? "text-indigo-300" : "text-slate-400"
-                        }`}
-                        d="M12 6a3 3 0 110-6 3 3 0 010 6zm2 18h-4a1 1 0 01-1-1v-6H6v-6a3 3 0 013-3h6a3 3 0 013 3v6h-3v6a1 1 0 01-1 1z"
-                      />
-                    </svg>
-                    <span className="text-md font-bold ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
-                      Jobs
-                    </span>
-                  </div>
-                </div>
-              </NavLink>
-            </li>
-
             {/* Tariffs */}
             <li className="px-2 py-2 mb-0.5 last:mb-0">
               <NavLink
@@ -285,6 +207,82 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                     </svg>
                     <span className="text-md font-bold ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
                       Region Check
+                    </span>
+                  </div>
+                </div>
+              </NavLink>
+            </li>
+
+            {/* Shop */}
+            <li className="px-2 py-2  mb-0.5 last:mb-0">
+              <NavLink
+                end
+                to="/shop"
+                className={`block  truncate transition duration-150 rounded-full ${
+                  pathname === "/shop"
+                    ? "bg-[var(--color-yellow)] text-[var(--color-text-blue)] text-bold"
+                    : "hover:text-red-500"
+                }`}
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center">
+                    <svg className="shrink-0 h-6 w-6" viewBox="0 0 24 24">
+                      <path
+                        className={`fill-current ${
+                          pathname.includes("ecommerce") ? "text-indigo-300" : "text-slate-400"
+                        }`}
+                        d="M13 15l11-7L11.504.136a1 1 0 00-1.019.007L0 7l13 8z"
+                      />
+                      <path
+                        className={`fill-current ${
+                          pathname.includes("ecommerce") ? "text-indigo-600" : "text-slate-700"
+                        }`}
+                        d="M13 15L0 7v9c0 .355.189.685.496.864L13 24v-9z"
+                      />
+                      <path
+                        className={`fill-current ${
+                          pathname.includes("ecommerce") ? "text-indigo-500" : "text-slate-600"
+                        }`}
+                        d="M13 15.047V24l10.573-7.181A.999.999 0 0024 16V8l-11 7.047z"
+                      />
+                    </svg>
+                    <span className="text-md font-bold ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                      Shop
+                    </span>
+                  </div>
+                </div>
+              </NavLink>
+            </li>
+
+            {/* Jobs */}
+            <li className="px-2 py-2  mb-0.5 last:mb-0">
+              <NavLink
+                end
+                to="/jobs"
+                className={`block  truncate transition duration-150 rounded-full ${
+                  pathname === "/jobs"
+                    ? "bg-[var(--color-yellow)] text-[var(--color-text-blue)] text-bold"
+                    : "hover:text-red-500"
+                }`}
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center">
+                    <svg className="shrink-0 h-6 w-6" viewBox="0 0 24 24">
+                      <path
+                        className={`fill-current ${
+                          pathname.includes("community") ? "text-indigo-500" : "text-slate-600"
+                        }`}
+                        d="M18.974 8H22a2 2 0 012 2v6h-2v5a1 1 0 01-1 1h-2a1 1 0 01-1-1v-5h-2v-6a2 2 0 012-2h.974zM20 7a2 2 0 11-.001-3.999A2 2 0 0120 7zM2.974 8H6a2 2 0 012 2v6H6v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5H0v-6a2 2 0 012-2h.974zM4 7a2 2 0 11-.001-3.999A2 2 0 014 7z"
+                      />
+                      <path
+                        className={`fill-current ${
+                          pathname.includes("community") ? "text-indigo-300" : "text-slate-400"
+                        }`}
+                        d="M12 6a3 3 0 110-6 3 3 0 010 6zm2 18h-4a1 1 0 01-1-1v-6H6v-6a3 3 0 013-3h6a3 3 0 013 3v6h-3v6a1 1 0 01-1 1z"
+                      />
+                    </svg>
+                    <span className="text-md font-bold ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                      Jobs
                     </span>
                   </div>
                 </div>
