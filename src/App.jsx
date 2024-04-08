@@ -14,6 +14,7 @@ import Jobs from "./pages/Jobs";
 import RegionCheck from "./pages/RegionCheck";
 import Shop from "./pages/Shop";
 import Settings from "./pages/Settings";
+import Help from "./pages/Help";
 
 function App() {
   const location = useLocation();
@@ -29,13 +30,11 @@ function App() {
   return (
     <>
       <div className="flex h-screen overflow-hidden">
-        {/* Sidebar */}
         <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
-        {/* Content area */}
         <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
-          {/*  Site header */}
           <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+
           <Routes>
             <Route exact path="/" element={<Dashboard />} />
             <Route exact path="/tariffs" element={<Tariffs />} />
@@ -43,6 +42,7 @@ function App() {
             <Route exact path="/jobs" element={<Jobs />} />
             <Route exact path="/shop" element={<Shop />} />
             <Route exact path="/settings" element={<Settings />} />
+            <Route exact path="/help" element={<Help />} />
           </Routes>
         </div>
       </div>
