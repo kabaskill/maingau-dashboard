@@ -22,9 +22,9 @@ export const hexToRGB = (h) => {
 };
 
 export const formatValue = (value) =>
-  Intl.NumberFormat("en-US", {
+  Intl.NumberFormat("de-DE", {
     style: "currency",
-    currency: "USD",
+    currency: "EUR",
     maximumSignificantDigits: 3,
-    notation: "compact",
+    notation: "standard",
   }).format(value);

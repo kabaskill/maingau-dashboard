@@ -17,7 +17,7 @@ function Dashboard() {
   const cardData = {
     gas: {
       title: "MAINGAU GasKomfort",
-      value: "79.00 €",
+      value: "79,00",
       arbeitspreis: "6,35",
       vorteile: [
         "Kurze Vertragslaufzeit",
@@ -27,7 +27,7 @@ function Dashboard() {
     },
     strom: {
       title: "MAINGAU StromKomfort",
-      value: "94.00 €",
+      value: "94,00",
       arbeitspreis: "27,13",
       vorteile: [
         "12 Monate Preisgarantie",
@@ -38,52 +38,55 @@ function Dashboard() {
     internet: {
       title: "250 MBit/s",
       subtitle: "DSL 250",
-      value: "12,95 €",
-      hochPreis: "12,95",
-      highlight: [
-        "12 Monate Preisgarantie",
-        "100% Ökostrom",
-        "Rabatte auf Internet-, Mobilfunk- & Autostromtarife",
-      ],
+      value: "12,95",
+      subtitle2: "13. - 24. Monat",
+      hochPreis: "42,95",
+      highlights: ["Internet-Flat", "bis zu 250 MBit/s Download", "bis zu 40 MBit/s Upload"],
     },
-
+    mobilfunk: {
+      title: "16 GB",
+      subtitle: "LTE Allnet Flat 16GB",
+      value: "8,99",
+      subtitle2: "anstatt",
+      hochPreis: "17,99",
+      highlights: ["LTE-Highspeed", "Allnet Flat", "EU-Roaming"],
+    },
   };
 
   return (
-    <main>
-      <div className="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto">
-        {/* Welcome banner */}
-        <WelcomeBanner />
+    <main className="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto b">
+      <WelcomeBanner />
 
-        {/* Cards */}
-        <div className="grid grid-cols-12 gap-4">
-          <DashboardCard01 cardData={cardData.gas} />
-          <DashboardCard01 cardData={cardData.strom} />
+      <div className="grid grid-cols-12 gap-4">
+        <DashboardCard01 cardData={cardData.gas} />
+        <DashboardCard01 cardData={cardData.strom} />
 
-          <DashboardCard02 cardData={cardData.internet}/>
+        <DashboardCard04 />
 
-          <DashboardCard03 />
+        <DashboardCard02 cardData={cardData.internet} />
+        <DashboardCard02 cardData={cardData.mobilfunk} />
+        <DashboardCard02 cardData={cardData.mobilfunk} />
+        <DashboardCard02 cardData={cardData.mobilfunk} />
 
-          <DashboardCard04 />
+        <DashboardCard03 />
 
-          <DashboardCard05 />
+        <DashboardCard05 />
 
-          <DashboardCard06 />
+        <DashboardCard06 />
 
-          <DashboardCard07 />
+        <DashboardCard07 />
 
-          <DashboardCard08 />
+        <DashboardCard08 />
 
-          <DashboardCard09 />
+        <DashboardCard09 />
 
-          <DashboardCard10 />
+        <DashboardCard10 />
 
-          <DashboardCard11 />
+        <DashboardCard11 />
 
-          <DashboardCard12 />
+        <DashboardCard12 />
 
-          <DashboardCard13 />
-        </div>
+        <DashboardCard13 />
       </div>
     </main>
   );

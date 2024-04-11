@@ -1,13 +1,7 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import EditMenu from "../../components/DropdownEditMenu";
 
-// Import utilities
-import BlueButton from "../../components/BlueButton";
-
 function DashboardCard02({ cardData }) {
-  const [showDetails, setShowDetails] = useState(false);
-
   return (
     <article className="flex flex-col  col-span-full sm:col-span-6 xl:col-span-3 bg-white dark:bg-slate-800 shadow-lg rounded-2xl border border-slate-200 dark:border-slate-700">
       <header className="flex justify-between items-start p-8">
@@ -46,46 +40,41 @@ function DashboardCard02({ cardData }) {
         </EditMenu>
       </header>
 
+      <div className="bg-[var(--color-bg-blue)] px-10 flex flex-col gap-4 py-8">
+        <ul className="flex flex-col gap-4">
+          {cardData.highlights.map((highlight, index) => (
+            <li key={index} className="flex flex-shrink-0 items-center ">
+              <img
+                className="bg-[var(--color-yellow)] rounded-full filter-red-500 mr-4 flex-grow-0"
+                src="src\images\check-mark.svg"
+                alt="check-mark"
+                width={16}
+              />
+              <span className=" text-sm font-bold text-[var(--color-text-blue)]">
+                {" "}
+                {highlight}{" "}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
       <div className="flex flex-col mb-10 mx-10">
         <p className="text-xs font-semibold text-slate-400 dark:text-slate-500 pb-10 ">
           {cardData.highlight}
         </p>
 
-        <p className="text-xs font-semibold text-slate-400 dark:text-slate-500 ">13. - 24. Monat</p>
-        <p className="text-lg font-extrabold text-[var(--color-text-blue)] dark:text-slate-100 pb-8">
-          {cardData.hochPreis} €
+        <p className="text-xs font-semibold text-slate-400 dark:text-slate-500 self-end ">
+          {cardData.subtitle2}
+        </p>
+        <p className="text-base font-extrabold text-[var(--color-text-blue)] dark:text-slate-100  self-end pb-2">
+          {cardData.hochPreis} € / Monat
         </p>
 
         <p className="text-4xl font-extrabold text-[var(--color-dark-blue)] dark:text-slate-100 self-end ">
-          {cardData.value} <span className=" text-base">/ Monat</span>
+          {cardData.value} € <span className=" text-base">/ Monat</span>
         </p>
       </div>
-
-      {/* {showDetails && (
-        <div className="bg-[var(--color-bg-blue)] px-10 flex flex-col gap-4 py-8">
-          <h4 className=" text-2xl font-extrabold text-[var(--color-text-blue)] ">Ihre Vorteile</h4>
-          <ul className="flex flex-col gap-4">
-            {cardData.vorteile.map((vorteil, index) => (
-              <li key={index} className="flex flex-shrink-0 place-items-start ">
-                <img
-                  className="bg-[var(--color-yellow)] rounded-full filter-red-500 mr-4 flex-grow-0"
-                  src="src\images\check-mark.svg"
-                  alt="check-mark"
-                  width={24}
-                />
-                <span className="font-bold text-[var(--color-text-blue)]"> {vorteil} </span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-      <div className="bg-white rounded-full grid mx-8 mt-8 mb-12">
-        <BlueButton
-          btnText={"Details"}
-          handleClick={() => setShowDetails(!showDetails)}
-          showIcon={false}
-        />
-      </div> */}
     </article>
   );
 }
