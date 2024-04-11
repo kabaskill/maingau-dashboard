@@ -12,6 +12,7 @@ import DashboardCard10 from "../partials/dashboard/DashboardCard10";
 import DashboardCard11 from "../partials/dashboard/DashboardCard11";
 import DashboardCard12 from "../partials/dashboard/DashboardCard12";
 import DashboardCard13 from "../partials/dashboard/DashboardCard13";
+import DashboardCardAds from "../partials/dashboard/DashboardCardAds";
 
 function Dashboard() {
   const cardData = {
@@ -51,13 +52,33 @@ function Dashboard() {
       hochPreis: "17,99",
       highlights: ["LTE-Highspeed", "Allnet Flat", "EU-Roaming"],
     },
+    ad1: {
+      title: "Internet",
+      subtitle: "Bis zu 276 € sparen",
+      image: "src/images/internet.webp",
+      text: "Jetzt Internettarif zwischen 50 und 1.000 MBit/s wählen und bis zu 276 € sparen.",
+      highlights: [
+        "Glasfaser- und DSL Tarife",
+        "Router mieten oder kaufen",
+        "15% Rabatt als MAINGAU-Kunde",
+      ],
+      btnText: "Zu den Internettarifen",
+    },
+    ad2: {
+      title: "Mobilfunk",
+      subtitle: "Tarife zum Spitzenpreis",
+      image: "src/images/mobilfunk.webp",
+      text: "Wählen Sie einen Mobilfunktarif mit 10 bis 50 GB Datenvolumen und sichern Sie sich eine Ersparnis von bis zu 216 €.",
+      highlights: ["​5G oder LTE", "Allnet-Flat SMS & Telefonie", "25 % Rabatt als MAINGAU-Kunde"],
+      btnText: "Zu den Mobilfunktarifen",
+    },
   };
 
   return (
     <main className="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto b">
       <WelcomeBanner />
 
-      <div className="grid grid-cols-12 gap-4">
+      <section className="grid grid-cols-12 gap-4">
         <DashboardCard01 cardData={cardData.gas} />
         <DashboardCard01 cardData={cardData.strom} />
 
@@ -65,10 +86,10 @@ function Dashboard() {
 
         <DashboardCard02 cardData={cardData.internet} />
         <DashboardCard02 cardData={cardData.mobilfunk} />
-        <DashboardCard02 cardData={cardData.mobilfunk} />
-        <DashboardCard02 cardData={cardData.mobilfunk} />
+        <DashboardCardAds cardData={cardData.ad1} />
+        <DashboardCardAds cardData={cardData.ad2} />
 
-        <DashboardCard03 />
+        {/* <DashboardCard03 />
 
         <DashboardCard05 />
 
@@ -86,8 +107,8 @@ function Dashboard() {
 
         <DashboardCard12 />
 
-        <DashboardCard13 />
-      </div>
+        <DashboardCard13 /> */}
+      </section>
     </main>
   );
 }

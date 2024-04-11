@@ -14,12 +14,12 @@ function WelcomeBanner() {
   }
 
   return (
-    <div className="relative bg-gradient-to-r from-indigo-200 to-indigo-400 dark:bg-gradient-to-r dark:from-indigo-600 dark:to-indigo-200 p-4 sm:p-6 rounded-sm overflow-hidden mb-8">
+    <section className="relative bg-gradient-to-r from-indigo-200 to-indigo-400 dark:bg-gradient-to-r dark:from-indigo-600 dark:to-indigo-200 p-4 sm:p-6 rounded-sm overflow-hidden mb-8">
       <h1 className="text-2xl md:text-3xl text-slate-800 dark:text-slate-100 font-bold mb-1">
         {greeting}, USER_NAME
       </h1>
       <p className="dark:text-indigo-200">All products you own and more...</p>
-    </div>
+    </section>
   );
 }
 

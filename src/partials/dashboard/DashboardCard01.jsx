@@ -3,7 +3,7 @@ import EditMenu from "../../components/DropdownEditMenu";
 
 function DashboardCard01({ cardData }) {
   return (
-    <article className="flex flex-col  col-span-full sm:col-span-6 xl:col-span-3 bg-white dark:bg-slate-800 shadow-lg rounded-2xl border border-slate-200 dark:border-slate-700">
+    <article className="flex flex-col  col-span-full sm:col-span-6 xl:col-span-3 bg-white dark:bg-slate-600 shadow-lg rounded-2xl border border-slate-200 dark:border-slate-700">
       <header className="flex justify-between items-start p-8">
         <h3 className="text-4xl font-extrabold text-[var(--color-dark-blue)] dark:text-slate-100">
           {cardData.title}
@@ -39,12 +39,12 @@ function DashboardCard01({ cardData }) {
 
       <div className="flex flex-col mb-10 mx-10">
         <p className="text-xs font-semibold text-slate-400 dark:text-slate-500 ">Grundpreis</p>
-        <p className="text-lg font-extrabold text-[var(--color-text-blue)] dark:text-slate-100 mb-4">
+        <p className="text-lg font-extrabold text-[var(--color-text-blue)]  mb-4">
           180,00 €/Jahr
         </p>
 
         <p className="text-xs font-semibold text-slate-400 dark:text-slate-500 ">Arbeitspreis</p>
-        <p className="text-lg font-extrabold text-[var(--color-text-blue)] dark:text-slate-100 pb-16">
+        <p className="text-lg font-extrabold text-[var(--color-text-blue)]  pb-16">
           {cardData.arbeitspreis} ct/kWh
         </p>
 

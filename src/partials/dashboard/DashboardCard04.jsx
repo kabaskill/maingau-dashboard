@@ -22,9 +22,9 @@ function DashboardCard04() {
         label: "Gas",
         data: [-55, 10, 50, -40, 90, 70, 60, 20],
         backgroundColor: "#004bad",
-        hoverBackgroundColor: tailwindConfig().theme.colors.blue[500],
-        barPercentage: 0.7,
-        categoryPercentage: 0.7,
+        hoverBackgroundColor: tailwindConfig().theme.colors.indigo[600],
+        barPercentage: 0.9,
+        categoryPercentage: 0.9,
       },
       // Blue bars
       {
@@ -32,8 +32,8 @@ function DashboardCard04() {
         data: [20, 30, 35, -50, 40, 35, 30, 20],
         backgroundColor: "#ffe500",
         hoverBackgroundColor: tailwindConfig().theme.colors.indigo[600],
-        barPercentage: 0.7,
-        categoryPercentage: 0.7,
+        barPercentage: 0.9,
+        categoryPercentage: 0.9,
       },
     ],
   };
