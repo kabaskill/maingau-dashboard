@@ -34,7 +34,7 @@ function DashboardCardAds({ cardData }) {
         </p>
 
         <Link to="/tariffs" className="text-center py-2 rounded-lg font-semibold text-sm">
-          <BlueButton btnText={cardData.btnText} handleClick={""} showIcon={false} />
+          <BlueButton btnText={cardData.btnText} showIcon={false} />
         </Link>
       </div>
     </article>

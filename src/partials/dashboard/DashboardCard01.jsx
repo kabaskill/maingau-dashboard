@@ -15,23 +15,16 @@ function DashboardCard01({ cardData }) {
               className="font-medium text-sm text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-200 flex py-1 px-3"
               to="#0"
             >
-              Option 1
+              Upgrade
             </Link>
           </li>
-          <li>
-            <Link
-              className="font-medium text-sm text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-200 flex py-1 px-3"
-              to="#0"
-            >
-              Option 2
-            </Link>
-          </li>
+        
           <li>
             <Link
               className="font-medium text-sm text-rose-500 hover:text-rose-600 flex py-1 px-3"
               to="#0"
             >
-              Remove
+              Störung?
             </Link>
           </li>
         </EditMenu>
