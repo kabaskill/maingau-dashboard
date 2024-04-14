@@ -21,7 +21,7 @@ function WelcomeBanner() {
     "/": "All products you own and more...",
     "/tariffs": "Special offers for you",
     "/region-check": "Check your region",
-    "/shop": "Your wishlist and special offers",
+    "/shop": "Your shop with your prices",
     "/jobs": "Check out our job offers",
     "/settings": "Your account settings",
     "/help": "Help and support",

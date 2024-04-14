@@ -1,5 +1,5 @@
 import { useState } from "react";
-import WelcomeBanner from "../partials/dashboard/WelcomeBanner";
+import WelcomeBanner from "../partials/WelcomeBanner";
 import SimpleMap from "../partials/SimpleMap";
 
 function RegionCheck() {

@@ -1,4 +1,4 @@
-import WelcomeBanner from "../partials/dashboard/WelcomeBanner";
+import WelcomeBanner from "../partials/WelcomeBanner";
 
 function Settings() {
   return (
@@ -36,11 +36,20 @@ function Settings() {
           placeholder="Birth Date"
         />
 
-        <label htmlFor="city">City</label>
-        <input className="form-input" type="text" id="city" name="city" placeholder="City" />
+        <label htmlFor="hausnummer">Hausnummer</label>
+        <input
+          className="form-input"
+          type="number"
+          id="hausnummer"
+          name="hausnummer"
+          placeholder="Hausnummer"
+        />
 
         <label htmlFor="street">Street</label>
         <input className="form-input" type="text" id="street" name="street" placeholder="Street" />
+
+        <label htmlFor="city">City</label>
+        <input className="form-input" type="text" id="city" name="city" placeholder="City" />
 
         <label htmlFor="plz">Postleitzahl (PLZ)</label>
         <input
@@ -49,15 +58,6 @@ function Settings() {
           id="plz"
           name="plz"
           placeholder="Postleitzahl"
-        />
-
-        <label htmlFor="hausnummer">Hausnummer</label>
-        <input
-          className="form-input"
-          type="number"
-          id="hausnummer"
-          name="hausnummer"
-          placeholder="Hausnummer"
         />
 
         <button

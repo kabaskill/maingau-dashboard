@@ -1,4 +1,4 @@
-import WelcomeBanner from "../partials/dashboard/WelcomeBanner";
+import WelcomeBanner from "../partials/WelcomeBanner";
 
 function Help() {
   return (
