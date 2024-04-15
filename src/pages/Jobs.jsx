@@ -28,7 +28,7 @@ function Jobs() {
               <li key={index} className="flex flex-shrink-0 items-center ">
                 <img
                   className=" rounded-full filter-red-500 mr-4 flex-grow-0"
-                  src="src\images\check-mark.svg"
+                  src="../images/check-mark.svg"
                   alt="check-mark"
                   width={24}
                 />
@@ -45,7 +45,7 @@ function Jobs() {
             <BlueButton btnText={jobsData.btnText} showIcon={false} />
           </Link>
         </article>
-        <img src="src/images/jobs.webp" alt="jobs" className="col-span-2 rounded-3xl" />
+        <img src="../images/jobs.webp" alt="jobs" className="col-span-2 rounded-3xl" />
       </section>
     </main>
   );
