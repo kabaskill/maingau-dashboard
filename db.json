@@ -2,17 +2,16 @@
   "data": {
     "users": [
       {
-        "id": "1",
         "vorname": "Oguz",
         "nachname": "Kabasakal",
         "email": "oguzkabasakal@gmail.com",
         "password": "123456",
-        "geburtstag": "17/09/1987",
+        "geburtstag": "1987-09-17",
         "geschlecht": "männlich",
         "telefon": "0152 36786051",
         "strasse": "Neckarstraße",
-        "hausnummer": "12",
-        "plz": "64283",
+        "hausnummer": 12,
+        "plz": 64283,
         "city": "Darmstadt",
         "cardData": {
           "gas": {
@@ -108,7 +107,6 @@
             "link": "https://shop.maingau-energie.de/multimedia-technik/kopfhoerer/over-ear/sennheiser-rs-120-w?c=51"
           }
         ],
-
         "shopItemsNeu": [
           {
             "title": "Bosch MCM4200 Food Processor",

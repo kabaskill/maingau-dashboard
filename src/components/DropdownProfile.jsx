@@ -32,6 +32,23 @@ function DropdownProfile({ align }) {
     return () => document.removeEventListener("keydown", keyHandler);
   });
 
+  const [userName, setUserName] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch("/api/users");
+      const data = await response.json();
+
+      setUserName(data.users[0].vorname + " " + data.users[0].nachname);
+    };
+
+    fetchData();
+  }, []);
+
+  if (!userName) {
+    return "Loading...";
+  }
+
   return (
     <div className="relative inline-flex ">
       <button
@@ -44,7 +61,7 @@ function DropdownProfile({ align }) {
         <img className="w-8 h-8 rounded-full" src={UserAvatar} width="32" height="32" alt="User" />
         <div className="flex items-center truncate px-4">
           <span className="truncate ml-2 text-sm text-[var(--color-text-blue)] font-bold group-hover:text-white ">
-            USER_NAME
+            {userName ? userName : "User"}
           </span>
         </div>
       </button>
@@ -67,7 +84,7 @@ function DropdownProfile({ align }) {
           onBlur={() => setDropdownOpen(false)}
         >
           <div className="pt-0.5 pb-2 px-3 mb-1 border-b border-slate-200 dark:border-slate-700">
-            <div className="font-medium text-slate-800 dark:text-slate-100">USER_NAME</div>
+            <div className="font-medium text-slate-800 dark:text-slate-100">{userName}</div>
             <div className="text-xs text-slate-500 dark:text-slate-400 ">MAINGAU Elite</div>
           </div>
           <ul>

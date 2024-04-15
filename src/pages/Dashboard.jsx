@@ -69,8 +69,10 @@ function Dashboard() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("http://localhost:3000/data");
+      const response = await fetch("/api/users");
+      console.log("🚀  response:", response);
       const data = await response.json();
+      console.log("🚀  data:", data);
 
       setCardData(data.users[0].cardData);
     };

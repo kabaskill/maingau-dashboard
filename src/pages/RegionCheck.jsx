@@ -1,9 +1,30 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import WelcomeBanner from "../partials/WelcomeBanner";
 import SimpleMap from "../partials/SimpleMap";
 
 function RegionCheck() {
+  const [userAddress, setUserAddress] = useState(null);
   const [coordinates, setCoordinates] = useState({ posX: 49.87, posY: 8.64 });
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch("/api/users");
+      const data = await response.json();
+
+      setUserAddress({
+        strasse: data.users[0].strasse,
+        hausnummer: data.users[0].hausnummer,
+        plz: data.users[0].plz,
+        city: data.users[0].city,
+      });
+    };
+
+    fetchData();
+  }, []);
+
+  if (!userAddress) {
+    return "Loading...";
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -53,6 +74,7 @@ function RegionCheck() {
               id="street"
               name="street"
               placeholder="Street"
+              defaultValue={userAddress.strasse}
             />
           </div>
 
@@ -64,12 +86,20 @@ function RegionCheck() {
               id="hausnummer"
               name="hausnummer"
               placeholder="Hausnummer"
+              defaultValue={userAddress.hausnummer}
             />
           </div>
 
           <div className="flex flex-col gap-2">
             <label htmlFor="city">City</label>
-            <input className="form-input" type="text" id="city" name="city" placeholder="City" />
+            <input
+              className="form-input"
+              type="text"
+              id="city"
+              name="city"
+              placeholder="City"
+              defaultValue={userAddress.city}
+            />
           </div>
 
           <div className="flex flex-col gap-2">
@@ -80,6 +110,7 @@ function RegionCheck() {
               id="plz"
               name="plz"
               placeholder="Postleitzahl"
+              defaultValue={userAddress.plz}
             />
           </div>
 
