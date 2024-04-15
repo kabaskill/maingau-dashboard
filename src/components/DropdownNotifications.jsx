@@ -1,39 +1,15 @@
 import React, { useState, useRef, useEffect } from "react";
+import useUser from "../utils/useUser";
 import { Link } from "react-router-dom";
 import Transition from "../utils/Transition";
 
 function DropdownNotifications({ align }) {
-  const notificationItems = [
-    {
-      id: 1,
-      img: "📣",
-      title: "1 item(s) on your wishlist is on sale!",
-      description: "Don't miss the chance to get your favorite items at a lower price!",
-      date: "April 15",
-      url: "shop",
-    },
-    {
-      id: 2,
-      img: "⚡",
-      title: "Use more, pay less!",
-      description: "Check out the new subscription options to get better deals.",
-      date: "April 14",
-      url: "tariffs",
-    },
-    {
-      id: 3,
-      img: "🚀",
-      title: "Glasfaser is coming!",
-      description: "Click to check availability in your street.",
-      date: "April 13",
-      url: "region-check",
-    },
-  ];
-
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const trigger = useRef(null);
   const dropdown = useRef(null);
+
+  const { user, error, isLoading } = useUser(0);
 
   // close on click outside
   useEffect(() => {
@@ -56,6 +32,9 @@ function DropdownNotifications({ align }) {
     document.addEventListener("keydown", keyHandler);
     return () => document.removeEventListener("keydown", keyHandler);
   });
+
+  if (error) return <div>Failed to load</div>;
+  if (isLoading) return <div>Loading.....</div>;
 
   return (
     <div className="relative inline-flex">
@@ -103,7 +82,7 @@ function DropdownNotifications({ align }) {
             Notifications
           </div>
           <ul>
-            {notificationItems.map((item) => (
+            {user.notificationItems.map((item) => (
               <li
                 key={item.id}
                 className="border-b border-slate-200 dark:border-slate-700 last:border-0"

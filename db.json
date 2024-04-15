@@ -107,7 +107,7 @@
             "link": "https://shop.maingau-energie.de/multimedia-technik/kopfhoerer/over-ear/sennheiser-rs-120-w?c=51"
           }
         ],
-        "shopItemsNeu": [
+        "shopItems": [
           {
             "title": "Bosch MCM4200 Food Processor",
             "image": "src/images/neu1.jpg",
@@ -137,6 +137,32 @@
             "image": "src/images/neu5.jpg",
             "price": "21,62 €",
             "link": "https://shop.maingau-energie.de/heimwerken-garten/zubehoer/beleuchtung/ansmann-wfl800s-10w/800lm-led-strahler-mit-bewegungsmelder"
+          }
+        ],
+        "notificationItems": [
+          {
+            "id": 1,
+            "img": "📣",
+            "title": "1 item(s) on your wishlist is on sale!",
+            "description": "Don't miss the chance to get your favorite items at a lower price!",
+            "date": "April 15",
+            "url": "shop"
+          },
+          {
+            "id": 2,
+            "img": "⚡",
+            "title": "Use more, pay less!",
+            "description": "Check out the new subscription options to get better deals.",
+            "date": "April 14",
+            "url": "tariffs"
+          },
+          {
+            "id": 3,
+            "img": "🚀",
+            "title": "Glasfaser is coming!",
+            "description": "Click to check availability in your street.",
+            "date": "April 13",
+            "url": "region-check"
           }
         ]
       }
