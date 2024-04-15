@@ -1,26 +1,11 @@
-import { useEffect, useState } from "react";
 import WelcomeBanner from "../partials/WelcomeBanner";
+import useUser from "../utils/useUser";
 
 function Shop() {
-  const [userData, setUserData] = useState(null);
+  const { user, error, isLoading } = useUser(0);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch("/api/users");
-      const data = await response.json();
-
-      setUserData(data[0]);
-    };
-
-    fetchData();
-  }, []);
-
-  if (!userData) {
-    return "Loading...";
-  }
-
-  const wishlistItems = userData.wishlistItems;
-  const shopItemsNeu = userData.shopItemsNeu;
+  if (error) return <div>Failed to load</div>;
+  if (isLoading) return <div>Loading.....</div>;
 
   return (
     <main className="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto b">
@@ -29,7 +14,7 @@ function Shop() {
       <section>
         <h2 className="h2 text-[var(--color-text-blue)] dark:text-white mb-2">Wishlist</h2>
         <ul className="grid grid-cols-5 gap-4">
-          {wishlistItems.map((item) => (
+          {user.wishlistItems.map((item) => (
             <li key={item.title} className="bg-white dark:bg-slate-700 p-4 rounded-lg shadow-md ">
               <a
                 href={item.link}
@@ -55,7 +40,7 @@ function Shop() {
 
         <h2 className="h2 text-[var(--color-text-blue)] dark:text-white mt-12 mb-2">New Items</h2>
         <ul className="grid grid-cols-5 gap-4">
-          {shopItemsNeu.map((item) => (
+          {user.shopItems.map((item) => (
             <li key={item.title} className="bg-white dark:bg-slate-700 p-4 rounded-lg shadow-md ">
               <a
                 href={item.link}

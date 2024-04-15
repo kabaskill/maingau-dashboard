@@ -1,9 +1,15 @@
-import React, { useState, useEffect } from "react";
+import useUser from "../utils/useUser";
 import { useLocation } from "react-router-dom";
 
 function WelcomeBanner() {
   const date = new Date();
   const hours = date.getHours();
+
+  const { user, error, isLoading } = useUser(0);
+
+  if (error) return <div>Failed to load</div>;
+  if (isLoading) return <div>Loading.....</div>;
+
 
   let greeting = "Good morning";
   if (hours >= 12 && hours < 18) {
@@ -27,27 +33,10 @@ function WelcomeBanner() {
     "/help": "Help and support",
   };
 
-  const [userName, setUserName] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch("api/users");
-      const data = await response.json();
-
-      setUserName(data[0].vorname + " " + data[0].nachname);
-    };
-
-    fetchData();
-  }, []);
-
-  if (!userName) {
-    return "Loading...";
-  }
-
   return (
     <section className="relative bg-gradient-to-r from-indigo-200 to-indigo-400 dark:bg-gradient-to-r dark:from-indigo-600 dark:to-indigo-200 p-4 sm:p-6 rounded-sm overflow-hidden mb-8">
       <h1 className="text-2xl md:text-3xl text-slate-800 dark:text-slate-100 font-bold mb-1">
-        {greeting}, {userName ? userName : "User"}
+        {greeting}, {user ? user.vorname : "User"}
       </h1>
       <p>{greetingObj[pathname]}</p>
     </section>

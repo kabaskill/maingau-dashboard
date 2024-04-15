@@ -1,23 +1,11 @@
-import { useState, useEffect } from "react";
+import useUser from "../utils/useUser";
 import WelcomeBanner from "../partials/WelcomeBanner";
 
 function Settings() {
-  const [userData, setUserData] = useState(null);
+  const { user, error, isLoading } = useUser(0);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch("/api/users");
-      const data = await response.json();
-
-      setUserData(data[0]);
-    };
-
-    fetchData();
-  }, []);
-
-  if (!userData) {
-    return "Loading...";
-  }
+  if (error) return <div>Failed to load</div>;
+  if (isLoading) return <div>Loading.....</div>;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -61,7 +49,7 @@ function Settings() {
           id="vorname"
           name="vorname"
           placeholder="Vorname"
-          defaultValue={userData.vorname}
+          defaultValue={user.vorname}
         />
 
         <label htmlFor="nachname">Nachname</label>
@@ -71,7 +59,7 @@ function Settings() {
           id="nachname"
           name="nachname"
           placeholder="Nachname"
-          defaultValue={userData.nachname}
+          defaultValue={user.nachname}
         />
 
         <label htmlFor="email">E-mail</label>
@@ -81,7 +69,7 @@ function Settings() {
           id="email"
           name="email"
           placeholder="Email"
-          defaultValue={userData.email}
+          defaultValue={user.email}
         />
 
         <label htmlFor="password">Password</label>
@@ -91,7 +79,7 @@ function Settings() {
           id="password"
           name="password"
           placeholder="Password"
-          defaultValue={userData.password}
+          defaultValue={user.password}
         />
 
         <label htmlFor="birthdate">Geburtstag</label>
@@ -101,7 +89,7 @@ function Settings() {
           id="birthdate"
           name="birthdate"
           placeholder="Birth Date"
-          defaultValue={userData.geburtstag}
+          defaultValue={user.geburtstag}
           min="1950-01-01"
           max="2024-12-31"
         />
@@ -113,7 +101,7 @@ function Settings() {
           id="hausnummer"
           name="hausnummer"
           placeholder="Hausnummer"
-          defaultValue={userData.hausnummer}
+          defaultValue={user.hausnummer}
         />
 
         <label htmlFor="street">Street</label>
@@ -123,7 +111,7 @@ function Settings() {
           id="street"
           name="street"
           placeholder="Street"
-          defaultValue={userData.strasse}
+          defaultValue={user.strasse}
         />
 
         <label htmlFor="city">City</label>
@@ -133,7 +121,7 @@ function Settings() {
           id="city"
           name="city"
           placeholder="City"
-          defaultValue={userData.city}
+          defaultValue={user.city}
         />
 
         <label htmlFor="plz">Postleitzahl (PLZ)</label>
@@ -143,7 +131,7 @@ function Settings() {
           id="plz"
           name="plz"
           placeholder="Postleitzahl"
-          defaultValue={userData.plz}
+          defaultValue={user.plz}
         />
 
         <button

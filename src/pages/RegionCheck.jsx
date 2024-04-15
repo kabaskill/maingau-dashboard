@@ -1,30 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import useUser from "../utils/useUser";
 import WelcomeBanner from "../partials/WelcomeBanner";
 import SimpleMap from "../partials/SimpleMap";
 
 function RegionCheck() {
-  const [userAddress, setUserAddress] = useState(null);
   const [coordinates, setCoordinates] = useState({ posX: 49.87, posY: 8.64 });
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch("/api/users");
-      const data = await response.json();
+  const { user, error, isLoading } = useUser(0);
 
-      setUserAddress({
-        strasse: data[0].strasse,
-        hausnummer: data[0].hausnummer,
-        plz: data[0].plz,
-        city: data[0].city,
-      });
-    };
-
-    fetchData();
-  }, []);
-
-  if (!userAddress) {
-    return "Loading...";
-  }
+  if (error) return <div>Failed to load</div>;
+  if (isLoading) return <div>Loading.....</div>;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -74,7 +59,7 @@ function RegionCheck() {
               id="street"
               name="street"
               placeholder="Street"
-              defaultValue={userAddress.strasse}
+              defaultValue={user.strasse}
             />
           </div>
 
@@ -86,7 +71,7 @@ function RegionCheck() {
               id="hausnummer"
               name="hausnummer"
               placeholder="Hausnummer"
-              defaultValue={userAddress.hausnummer}
+              defaultValue={user.hausnummer}
             />
           </div>
 
@@ -98,7 +83,7 @@ function RegionCheck() {
               id="city"
               name="city"
               placeholder="City"
-              defaultValue={userAddress.city}
+              defaultValue={user.city}
             />
           </div>
 
@@ -110,7 +95,7 @@ function RegionCheck() {
               id="plz"
               name="plz"
               placeholder="Postleitzahl"
-              defaultValue={userAddress.plz}
+              defaultValue={user.plz}
             />
           </div>
 

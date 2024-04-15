@@ -3,12 +3,15 @@ import { Link } from "react-router-dom";
 import Transition from "../utils/Transition";
 
 import UserAvatar from "../images/user-avatar-32.png";
+import useUser from "../utils/useUser";
 
 function DropdownProfile({ align }) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const trigger = useRef(null);
   const dropdown = useRef(null);
+
+  const { user, error, isLoading } = useUser(0);
 
   // close on click outside
   useEffect(() => {
@@ -32,22 +35,8 @@ function DropdownProfile({ align }) {
     return () => document.removeEventListener("keydown", keyHandler);
   });
 
-  const [userName, setUserName] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch("/api/users");
-      const data = await response.json();
-
-      setUserName(data[0].vorname + " " + data[0].nachname);
-    };
-
-    fetchData();
-  }, []);
-
-  if (!userName) {
-    return "Loading...";
-  }
+  if (error) return <div>Failed to load</div>;
+  if (isLoading) return <div>Loading.....</div>;
 
   return (
     <div className="relative inline-flex ">
@@ -61,7 +50,7 @@ function DropdownProfile({ align }) {
         <img className="w-8 h-8 rounded-full" src={UserAvatar} width="32" height="32" alt="User" />
         <div className="flex items-center truncate px-4">
           <span className="truncate ml-2 text-sm text-[var(--color-text-blue)] font-bold group-hover:text-white ">
-            {userName ? userName : "User"}
+            {user ? user.vorname + " " + user.nachname : "User"}
           </span>
         </div>
       </button>
@@ -84,7 +73,9 @@ function DropdownProfile({ align }) {
           onBlur={() => setDropdownOpen(false)}
         >
           <div className="pt-0.5 pb-2 px-3 mb-1 border-b border-slate-200 dark:border-slate-700">
-            <div className="font-medium text-slate-800 dark:text-slate-100">{userName}</div>
+            <div className="font-medium text-slate-800 dark:text-slate-100">
+              {user ? user.vorname + " " + user.nachname : "User"}
+            </div>
             <div className="text-xs text-slate-500 dark:text-slate-400 ">MAINGAU Elite</div>
           </div>
           <ul>

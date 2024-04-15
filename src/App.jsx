@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
+import { SWRConfig } from "swr";
 
 import "./css/style.css";
 import "./charts/ChartjsConfig";
@@ -18,17 +19,20 @@ import Help from "./pages/Help";
 
 function App() {
   const location = useLocation();
-
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
     document.querySelector("html").style.scrollBehavior = "auto";
     window.scroll({ top: 0 });
     document.querySelector("html").style.scrollBehavior = "";
-  }, [location.pathname]); 
+  }, [location.pathname]);
 
   return (
-    <>
+    <SWRConfig
+      value={{
+        fetcher: (resource, init) => fetch(resource, init).then((res) => res.json()),
+      }}
+    >
       <div className="flex h-screen overflow-hidden">
         <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
@@ -46,7 +50,7 @@ function App() {
           </Routes>
         </div>
       </div>
-    </>
+    </SWRConfig>
   );
 }
 
