@@ -18,7 +18,9 @@ function Jobs() {
 
       <section className="grid grid-cols-3 gap-12 h-1/5">
         <article className="col-span-1 flex flex-col justify-between">
-          <h2 className="h2 text-[var(--color-text-blue)] dark:text-white mb-4">Jobs bei MAINGAU</h2>
+          <h2 className="h2 text-[var(--color-text-blue)] dark:text-white mb-4">
+            Jobs bei MAINGAU
+          </h2>
           <p className="text-lg text-[var(--color-text-blue)] dark:text-white  mb-12">
             Ob Schüler, Student oder Professional - wir haben die passende Stelle. Einfach in
             unserem Karriere-Portal umschauen und bewerben.
@@ -45,7 +47,7 @@ function Jobs() {
             <BlueButton btnText={jobsData.btnText} showIcon={false} />
           </Link>
         </article>
-        <img src="public/images/jobs.webp" alt="jobs" className="col-span-2 rounded-3xl" />
+        <img src="../../public/images/jobs.webp" alt="jobs" className="col-span-2 rounded-3xl" />
       </section>
     </main>
   );
