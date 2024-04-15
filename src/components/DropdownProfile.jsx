@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Transition from "../utils/Transition";
 
-import UserAvatar from "../images/user-avatar-32.png";
 import useUser from "../utils/useUser";
 
 function DropdownProfile({ align }) {
@@ -47,7 +46,13 @@ function DropdownProfile({ align }) {
         onClick={() => setDropdownOpen(!dropdownOpen)}
         aria-expanded={dropdownOpen}
       >
-        <img className="w-8 h-8 rounded-full" src={UserAvatar} width="32" height="32" alt="User" />
+        <img
+          className="w-8 h-8 rounded-full"
+          src="public/images/user-avatar-32.png"
+          width="32"
+          height="32"
+          alt="User"
+        />
         <div className="flex items-center truncate px-4">
           <span className="truncate ml-2 text-sm text-[var(--color-text-blue)] font-bold group-hover:text-white ">
             {user ? user.vorname + " " + user.nachname : "User"}
