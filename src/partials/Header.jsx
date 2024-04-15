@@ -34,7 +34,7 @@ function Header({ sidebarOpen, setSidebarOpen }) {
             </button>
             {!sidebarOpen && (
               <NavLink to="/" className="lg:hidden mx-4">
-                <img src="./src/images/maingau-logo.png" alt="maingau-logo" width={200} />
+                <img src="/images/maingau-logo.png" alt="maingau-logo" width={200} />
               </NavLink>
             )}
           </div>

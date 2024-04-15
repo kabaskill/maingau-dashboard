@@ -6,6 +6,9 @@ function WelcomeBanner() {
   const hours = date.getHours();
 
   const { user, error, isLoading } = useUser(0);
+  
+    const location = useLocation();
+    const { pathname } = location;
 
   if (error) return <div>Failed to load</div>;
   if (isLoading) return <div>Loading.....</div>;
@@ -19,9 +22,6 @@ function WelcomeBanner() {
   } else if (hours >= 24 || hours < 6) {
     greeting = "Good night";
   }
-
-  const location = useLocation();
-  const { pathname } = location;
 
   const greetingObj = {
     "/": "All products you own and more...",
