@@ -47,7 +47,7 @@ function Jobs() {
             <BlueButton btnText={jobsData.btnText} showIcon={false} />
           </Link>
         </article>
-        <img src="../../public/images/jobs.webp" alt="jobs" className="col-span-2 rounded-3xl" />
+        <img src="/images/jobs.webp" alt="jobs" className="col-span-2 rounded-3xl" />
       </section>
     </main>
   );

@@ -48,7 +48,7 @@ function DropdownProfile({ align }) {
       >
         <img
           className="w-8 h-8 rounded-full"
-          src="public/images/user-avatar-32.png"
+          src="/images/user-avatar-32.png"
           width="32"
           height="32"
           alt="User"

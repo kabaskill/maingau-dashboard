@@ -94,7 +94,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
           </button>
           {/* Logo */}
           <NavLink end to="/" className="block mt-2">
-            <img src="./src/images/maingau-logo.png" alt="maingau-logo" />
+            <img src="/images/maingau-logo.png" alt="maingau-logo" />
           </NavLink>
         </div>
 

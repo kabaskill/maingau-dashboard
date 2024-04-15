@@ -7,15 +7,15 @@ function Tariffs() {
 
       <section className="grid grid-cols-3">
         <a href="https://www.maingau-energie.de/mobilfunk/5G-Handytarife">
-          <img src="src/images/5g.png" alt="mobilfunk-5g" />
+          <img src="/images/5g.png" alt="mobilfunk-5g" />
         </a>
 
         <a href="https://www.maingau-energie.de/internet/glasfaser">
-          <img src="src/images/glasfaser.png" alt="glasfaser" />
+          <img src="/images/glasfaser.png" alt="glasfaser" />
         </a>
 
         <a href="https://www.maingau-energie.de/e-mobilitaet">
-          <img src="src/images/autostrom.png" alt="autostrom" />
+          <img src="/images/autostrom.png" alt="autostrom" />
         </a>
       </section>
     </main>

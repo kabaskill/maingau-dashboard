@@ -11,7 +11,7 @@ function DashboardCardAds({ cardData }) {
             <li key={index} className="flex flex-shrink-0 items-center ">
               <img
                 className="bg-[var(--color-yellow)] rounded-full filter-red-500 mr-4 flex-grow-0"
-                src="src\images\check-mark.svg"
+                src="/images/check-mark.svg"
                 alt="check-mark"
                 width={16}
               />
