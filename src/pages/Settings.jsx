@@ -9,7 +9,7 @@ function Settings() {
       const response = await fetch("/api/users");
       const data = await response.json();
 
-      setUserData(data.users[0]);
+      setUserData(data[0]);
     };
 
     fetchData();

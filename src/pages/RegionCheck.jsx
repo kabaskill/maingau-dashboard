@@ -12,10 +12,10 @@ function RegionCheck() {
       const data = await response.json();
 
       setUserAddress({
-        strasse: data.users[0].strasse,
-        hausnummer: data.users[0].hausnummer,
-        plz: data.users[0].plz,
-        city: data.users[0].city,
+        strasse: data[0].strasse,
+        hausnummer: data[0].hausnummer,
+        plz: data[0].plz,
+        city: data[0].city,
       });
     };
 

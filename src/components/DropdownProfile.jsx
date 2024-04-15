@@ -39,7 +39,7 @@ function DropdownProfile({ align }) {
       const response = await fetch("/api/users");
       const data = await response.json();
 
-      setUserName(data.users[0].vorname + " " + data.users[0].nachname);
+      setUserName(data[0].vorname + " " + data[0].nachname);
     };
 
     fetchData();

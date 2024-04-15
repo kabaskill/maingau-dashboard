@@ -1,71 +1,26 @@
+import { useEffect, useState } from "react";
 import WelcomeBanner from "../partials/WelcomeBanner";
 
 function Shop() {
-  const wishlistItems = [
-    {
-      title: "AOC 27G2U5BK ",
-      image: "src/images/wishlist1.jpg",
-      price: "151,96 €",
-      link: "https://shop.maingau-energie.de/multimedia-technik/home-office/monitore/aoc-27g2u5bk?c=242",
-    },
-    {
-      title: "Kodak Astro Zoom AZ528 mitternacht blau",
-      image: "src/images/wishlist2.jpg",
-      price: "238,65 €",
-      link: "https://shop.maingau-energie.de/multimedia-technik/kamera-foto/kodak-astro-zoom-az528-mitternacht-blau?c=29",
-    },
-    {
-      title: "Logitech Gaming Mouse PRO X SUPERLIGHT Black",
-      image: "src/images/wishlist3.jpg",
-      price: "91,08 €",
-      link: "https://shop.maingau-energie.de/multimedia-technik/home-office/tastaturen-maeuse/logitech-gaming-mouse-pro-x-superlight-black?c=240",
-    },
-    {
-      title: "Nintendo Switch Neon-Rot / Neon-Blau (neues Modell 2019)",
-      image: "src/images/wishlist4.png",
-      price: "323,80 € ",
-      link: "https://shop.maingau-energie.de/multimedia-technik/gaming/konsolen/nintendo-switch-neon-rot/neon-blau-neues-modell-2019?c=35",
-    },
-    {
-      title: "Sennheiser RS 120-W ",
-      image: "src/images/wishlist5.jpg",
-      price: "104,40 €",
-      link: "https://shop.maingau-energie.de/multimedia-technik/kopfhoerer/over-ear/sennheiser-rs-120-w?c=51",
-    },
-  ];
+  const [userData, setUserData] = useState(null);
 
-  const shopItemsNeu = [
-    {
-      title: "Bosch MCM4200 Food Processor",
-      image: "src/images/neu1.jpg",
-      price: "70,20 €",
-      link: "https://shop.maingau-energie.de/haushalt/kueche/kuechenkleingeraete/kuechenmaschinen/bosch-mcm4200-food-processor",
-    },
-    {
-      title: "Makita VC2512L Industriestaubsauger",
-      image: "src/images/neu2.jpg",
-      price: "152,25 €",
-      link: "https://shop.maingau-energie.de/haushalt/staubsauger-reiniger/nass-trockensauger/makita-vc2512l-industriestaubsauger",
-    },
-    {
-      title: "ProfiCare Proficare PC-HAS 3011 braun",
-      image: "src/images/neu3.jpg",
-      price: "18,42 €",
-      link: "https://shop.maingau-energie.de/haushalt/koerperpflege/haarpflege/proficare-proficare-pc-has-3011-braun",
-    },
-    {
-      title: "Shark HD352DE SpeedStyle, Gloss Finish ",
-      image: "src/images/neu4.jpg",
-      price: "213,89 €",
-      link: "https://shop.maingau-energie.de/haushalt/koerperpflege/haarpflege/shark-hd352de-speedstyle-gloss-finish",
-    },
-    {
-      title: "Ansmann WFL800S 10W/800lm LED-Strahler mit Bewegungsmelder ",
-      image: "src/images/neu5.jpg",
-      price: "21,62 €",
-      link: "https://shop.maingau-energie.de/heimwerken-garten/zubehoer/beleuchtung/ansmann-wfl800s-10w/800lm-led-strahler-mit-bewegungsmelder",
-    },
-  ];
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch("/api/users");
+      const data = await response.json();
+
+      setUserData(data[0]);
+    };
+
+    fetchData();
+  }, []);
+
+  if (!userData) {
+    return "Loading...";
+  }
+
+  const wishlistItems = userData.wishlistItems;
+  const shopItemsNeu = userData.shopItemsNeu;
 
   return (
     <main className="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto b">
