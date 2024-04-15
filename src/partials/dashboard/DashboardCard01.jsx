@@ -3,7 +3,7 @@ import EditMenu from "../../components/DropdownEditMenu";
 
 function DashboardCard01({ cardData }) {
   return (
-    <article className="flex flex-col  col-span-full sm:col-span-6 xl:col-span-3 bg-white dark:bg-slate-600 shadow-lg rounded-2xl border border-slate-200 dark:border-slate-700">
+    <article className="flex flex-col  col-span-full sm:col-span-6  xl:col-span-3 bg-white dark:bg-slate-600 shadow-lg rounded-2xl border border-slate-200 dark:border-slate-700">
       <header className="flex justify-between items-start p-8">
         <h3 className="text-4xl font-extrabold text-[var(--color-dark-blue)] dark:text-slate-100">
           {cardData.title}
