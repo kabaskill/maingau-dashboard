@@ -6,31 +6,30 @@ function WelcomeBanner() {
   const hours = date.getHours();
 
   const { user, error, isLoading } = useUser(0);
-  
-    const location = useLocation();
-    const { pathname } = location;
+
+  const location = useLocation();
+  const { pathname } = location;
 
   if (error) return <div>Failed to load</div>;
   if (isLoading) return <div>Loading.....</div>;
 
-
-  let greeting = "Good morning";
+  let greeting = "Guten Morgen";
   if (hours >= 12 && hours < 18) {
-    greeting = "Good afternoon";
+    greeting = "Guten Tag";
   } else if (hours >= 18 && hours < 24) {
-    greeting = "Good evening";
+    greeting = "Guten Abend";
   } else if (hours >= 24 || hours < 6) {
-    greeting = "Good night";
+    greeting = "Gute Nacht";
   }
 
   const greetingObj = {
-    "/": "All products you own and more...",
-    "/tariffs": "Special offers for you",
-    "/region-check": "Check your region",
-    "/shop": "Your shop with your prices",
-    "/jobs": "Check out our job offers",
-    "/settings": "Your account settings",
-    "/help": "Help and support",
+    "/": "Alle Produkte, die Sie besitzen und mehr...",
+    "/tariffs": "Sonderangebote für Sie",
+    "/region-check": "Überprüfen Sie Ihre Region",
+    "/shop": "Ihr Geschäft mit Ihren Preisen",
+    "/jobs": "Schauen Sie sich unsere Stellenangebote an",
+    "/settings": "Ihre Kontoeinstellungen",
+    "/help": "Hilfe und Unterstützung",
   };
 
   return (

@@ -41,7 +41,7 @@ function DropdownHelp({ align }) {
         onClick={() => setDropdownOpen(!dropdownOpen)}
         aria-expanded={dropdownOpen}
       >
-        <span className="sr-only">Need help?</span>
+        <span className="sr-only">Hilfe?</span>
 
         <svg className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <path
@@ -69,7 +69,7 @@ function DropdownHelp({ align }) {
           onBlur={() => setDropdownOpen(false)}
         >
           <div className="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase pt-1.5 pb-2 px-3">
-            Need help?
+            Hilfe?
           </div>
           <ul>
             <li>
@@ -85,7 +85,7 @@ function DropdownHelp({ align }) {
                   <rect y="3" width="12" height="9" rx="1" />
                   <path d="M2 0h8v2H2z" />
                 </svg>
-                <span>Product Support</span>
+                <span>Produktunterstützung</span>
               </Link>
             </li>
             <li>
@@ -115,7 +115,7 @@ function DropdownHelp({ align }) {
                 >
                   <path d="M11.854.146a.5.5 0 00-.525-.116l-11 4a.5.5 0 00-.015.934l4.8 1.921 1.921 4.8A.5.5 0 007.5 12h.008a.5.5 0 00.462-.329l4-11a.5.5 0 00-.116-.525z" />
                 </svg>
-                <span>Contact us</span>
+                <span>Kontakt</span>
               </Link>
             </li>
           </ul>
